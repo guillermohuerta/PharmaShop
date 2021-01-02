@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="fragments/head"></head>
+<body>
+<main>
+    <div class="container">
+        <div class="row">
+            <!--Side Bar Employed-->
+            <div class="col s3" th:insert="fragments/sidebar-employed"></div>
+
+            <div class="col s9">
+                <div style="margin-top: 6%;">
+                    <div class="section">
+                        <div th:switch="depots" class="container">
+                            <div th:case="*" class="row">
+                                <div class="col s12">
+
+                                    <h4>List of Depots
+                                        <a th:href="@{/depots/add}" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+                                    </h4>
+
+                                    <table class="centered highlight responsive-table">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Product</th>
+                                            <th scope="col">Supplier</th>
+                                            <th scope="col">Stock</th>
+                                            <th scope="col">Expiration</th>
+                                            <th scope="col">Options</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr th:each="depot : ${depots}">
+                                            <th scope="row" th:text="${depot.id}"></th>
+                                            <td th:text="${depot.product.name}"></td>
+                                            <td th:text="${depot.supplier.name}"></td>
+                                            <td th:text="${depot.stock}"></td>
+                                            <td th:text="${depot.expiration}"></td>
+                                            <td>
+                                                <div>
+                                                    <a th:href="@{/depots/edit/{id}
+                                                    (id=${depot.id})}"
+                                                       class="waves-effect waves-light btn-small">
+                                                        <i class="large material-icons">edit</i>
+                                                    </a>
+                                                    <a th:href="@{/depots/delete/{id}
+                                                    (id=${depot.id})}"
+                                                       class="waves-effect waves-light btn-small red lighten-1">
+                                                        <i class="large material-icons">delete</i>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

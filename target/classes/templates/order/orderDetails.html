@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="fragments/head"></head>
+<body>
+<main>
+    <div class="container">
+        <div class="row">
+            <!--Side Bar Employed-->
+            <div class="col s3" th:insert="fragments/sidebar-employed"></div>
+
+            <div class="col s9">
+                <div style="margin-top: 6%;">
+                    <div class="section">
+                        <div th:switch="orderDetails" class="container">
+                            <div th:case="*" class="row">
+                                <div class="col s12">
+
+                                    <h4>List of Order Details
+                                        <a th:href="@{/orderDetails/add}" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+                                    </h4>
+
+                                    <table class="centered highlight responsive-table">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Order</th>
+                                            <th scope="col">Product</th>
+                                            <th scope="col">Quantity</th>
+                                            <th scope="col">Sub Total</th>
+                                            <th scope="col">Options</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr th:each="orderdetails : ${orderDetails}">
+                                            <th scope="row" th:text="${orderdetails.id}"></th>
+                                            <td th:text="${orderdetails.order.id}"></td>
+                                            <td th:text="${orderdetails.product.name}"></td>
+                                            <td th:text="${orderdetails.quantity}"></td>
+                                            <td th:text="'$' + ${orderdetails.subtotal}"></td>
+                                            <td>
+                                                <div>
+                                                    <a th:href="@{/orderDetails/edit/{id}
+                                                    (id=${orderdetails.id})}"
+                                                       class="waves-effect waves-light btn-small">
+                                                        <i class="large material-icons">edit</i>
+                                                    </a>
+                                                    <a th:href="@{/orderDetails/delete/{id}
+                                                    (id=${orderdetails.id})}"
+                                                       class="waves-effect waves-light btn-small red lighten-1">
+                                                        <i class="large material-icons">delete</i>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

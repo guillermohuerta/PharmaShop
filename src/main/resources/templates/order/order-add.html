@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="fragments/head"></head>
+<body>
+<main>
+    <div class="container">
+        <div class="row">
+            <!--Side Bar Employed-->
+            <div class="col s3" th:insert="fragments/sidebar-employed"></div>
+
+            <div class="col s9">
+                <div style="margin-top: 8%;">
+                    <h3 class="center">New Order</h3>
+                    <div class="row">
+                        <div class="section col s12 l6 offset-l3">
+                            <form action="#" method="post" th:action="@{/orders/save}" th:object="${order}">
+                                <div class="input-field">
+                                    <label for="id">ID</label>
+                                    <input type="number" class="class-controller" id="id" th:field="*{id}" th:readonly="true">
+                                </div>
+
+                                <div class="input-field">
+                                    <input type="text" class="datepicker" id="time" th:field="*{time}">
+                                    <label for="time">Time Now</label>
+                                </div>
+
+                                <div class="input-field" style="margin: 40px  0px  20px 0px;">
+                                    <select th:field="*{userId}">
+                                        <option value="" disabled selected>Choose your option</option>
+                                        <option th:each="user : ${users} " th:value="${user.id}"
+                                                th:text="${user.name}" th:selected="${user.id}"></option>
+                                    </select>
+                                    <label>User</label>
+                                </div>
+
+                                <div class="input-field">
+                                    <label for="subTotal">SubTotal</label>
+                                    <input type="number" step="0.01" class="class-controller" id="subTotal" th:field="*{subTotal}">
+                                </div>
+
+                                <div class="input-field">
+                                    <label for="discount">Discount</label>
+                                    <input type="number" step="0.01" class="class-controller" id="discount" th:field="*{discount}">
+                                </div>
+
+                                <div class="input-field">
+                                    <label for="totalPay">Total Pay</label>
+                                    <input type="number" step="0.01" class="class-controller" id="totalPay" th:field="*{totalPay}">
+                                </div>
+
+                                <button type="submit" class="btn">Confirm</button>
+                                <a th:href="@{/orders}" class="btn red lighten-1">Back</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+<script type="text/javascript">
+    $(document).ready(function(){
+        M.AutoInit();
+    });
+</script>
+</html>

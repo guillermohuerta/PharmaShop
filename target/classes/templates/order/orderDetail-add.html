@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="fragments/head"></head>
+<body>
+
+<main>
+    <div class="container">
+        <div class="row">
+            <!--Side Bar Employed-->
+            <div class="col s3" th:insert="fragments/sidebar-employed"></div>
+
+            <div class="col s9">
+                <div style="margin-top: 8%;">
+                    <h3 class="center">New Order Detail</h3>
+                    <div class="row">
+                        <div class="section col s12 l6 offset-l3">
+                            <form action="#" method="post" th:action="@{/orderDetails/save}" th:object="${orderDetail}">
+                                <div class="input-field">
+                                    <label for="id">ID</label>
+                                    <input type="number" class="class-controller" id="id" th:field="*{id}" th:readonly="true">
+                                </div>
+
+                                <div class="input-field" style="margin: 35px 0px;">
+                                    <select th:field="*{orderId}">
+                                        <option value="" disabled selected>Choose your option</option>
+                                        <option th:each="order : ${orders} " th:value="${order.id}"
+                                                th:text="${order.id}" th:selected="${order.id}"></option>
+                                    </select>
+                                    <label>Order</label>
+                                </div>
+
+                                <div class="input-field" style="margin: 40px  0px  20px 0px;">
+                                    <select th:field="*{productId}">
+                                        <option value="" disabled selected>Choose your option</option>
+                                        <option th:each="product : ${products} " th:value="${product.id}"
+                                                th:text="${product.name}" th:selected="${product.id}"></option>
+                                    </select>
+                                    <label>Product</label>
+                                </div>
+
+                                <div class="input-field">
+                                    <label for="quantity">Quantity</label>
+                                    <input type="number" class="class-controller" id="quantity" th:field="*{quantity}">
+                                </div>
+
+                                <div class="input-field">
+                                    <label for="subtotal">Sub Total</label>
+                                    <input type="number" step="0.01" class="class-controller" id="subtotal" th:field="*{subtotal}">
+                                </div>
+
+                                <button type="submit" class="btn">Confirm</button>
+                                <a th:href="@{/orderDetails}" class="btn red lighten-1">Back</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<script type="text/javascript">
+    $(document).ready(function(){
+        M.AutoInit();
+    });
+</script>
+</body>
+</html>

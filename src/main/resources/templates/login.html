@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>FarmaShop</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<img class="wave-login" src="/img/login/wave-login.png" alt="">
+<div class="container-login">
+    <div class="banner-login">
+        <img src="/img/login/banner-index.svg" alt="">
+    </div>
+    <div class="content-login">
+        <form method="POST" th:action="@{/login}">
+            <img src="/img/login/logo-index.png" alt="">
+            <h2>FarmaShop</h2>
+
+            <div class="input-div dni">
+                <div class="i">
+                    <i class="material-icons">person</i>
+                </div>
+                <div>
+                    <h5>DNI</h5>
+                    <input class="input" type="text" name="username" id="username"/>
+                </div>
+            </div>
+
+            <div class="input-div password">
+                <div class="i">
+                    <i class="material-icons">vpn_key</i>
+                </div>
+                <div>
+                    <h5>Password</h5>
+                    <input class="input" type="password" name="password" id="password"/>
+                </div>
+            </div>
+
+            <a href="">Sing Up</a>
+            <input type="submit" value="Login" class="btn-login" >
+        </form>
+    </div>
+</div>
+</body>
+<script src="/js/login.js"></script>
+</html>

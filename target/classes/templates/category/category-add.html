@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="fragments/head"></head>
+<body>
+<main>
+    <div class="container">
+        <div class="row">
+            <!--Side Bar Employed-->
+            <div class="col s3" th:insert="fragments/sidebar-employed"></div>
+
+            <div class="col s9">
+                <div style="margin-top: 8%;">
+                    <h3 class="center">New Category</h3>
+                    <div class="row">
+                        <div class="section col s12 l6 offset-l3">
+                            <form action="#" method="post" th:object="${category}" th:action="@{/categories/save}">
+                                <div class="input-field">
+                                    <label for="id">ID</label>
+                                    <input type="number" class="class-controller" id="id" th:field="*{id}" th:readonly="true">
+                                </div>
+                                <div class="input-field">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="class-controller" id="name" th:field="*{name}">
+                                </div>
+                                <button type="submit" class="btn">Confirm</button>
+                                <a th:href="@{/categories}" class="btn red lighten-1">Back</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+<!--  Scripts-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</html>

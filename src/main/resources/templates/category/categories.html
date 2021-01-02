@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="fragments/head"></head>
+<body>
+<main>
+    <div class="container">
+        <div class="row">
+            <!--Side Bar Employed-->
+            <div class="col s3" th:insert="fragments/sidebar-employed"></div>
+
+            <div class="col s9">
+                <div style="margin-top: 6%;">
+                    <div class="section">
+                        <div th:switch="categories" class="container">
+                            <div th:case="*" class="row">
+                                <div class="col s12">
+
+                                    <h4>List of Categories
+                                        <a th:href="@{/categories/add}" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+                                    </h4>
+
+                                    <table class="centered highlight responsive-table">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Options</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr th:each="category : ${categories}">
+                                            <th scope="row" th:text="${category.id}"></th>
+                                            <td th:text="${category.name}"></td>
+
+                                            <td>
+                                                <div>
+                                                    <a th:href="@{/categories/edit/{id}
+                                                    (id=${category.id})}"
+                                                       class="waves-effect waves-light btn-small">
+                                                        <i class="large material-icons">edit</i>
+                                                    </a>
+                                                    <a th:href="@{/categories/delete/{id}
+                                                    (id=${category.id})}"
+                                                       class="waves-effect waves-light btn-small red lighten-1">
+                                                        <i class="large material-icons">delete</i>
+                                                    </a>
+                                                    <a th:href="@{/categories/{id}/products (id=${category.id})}" class="btn btn-primary btn-sm" >Products</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+<!--  Scripts-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</html>

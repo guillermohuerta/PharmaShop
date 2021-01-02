@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="fragments/head-client">
+</head>
+<body>
+
+    <div th:insert="fragments/nav-client"></div>
+
+    <div id="carousel-main">
+        <div class="carousel carousel-slider">
+            <a class="carousel-item" href="#one!"><img src="/img/client/slide-1.jpg"></a>
+            <a class="carousel-item" href="#two!"><img src="/img/client/slide-2.jpg"></a>
+            <a class="carousel-item" href="#three!"><img src="/img/client/slide-3.webp"></a>
+            <a class="carousel-item" href="#four!"><img src="/img/client/slide-2.jpg"></a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="title-main">
+            <h2>Current products</h2>
+        </div>
+        <div>
+            <div class="row">
+                <div th:each="product : ${productFiltered}" class="col s3">
+                    <div class="card">
+                        <div class="card-image">
+                            <img th:src="${product.url}">
+                            <a class="btn-floating halfway-fab waves-effect waves-light red"
+                               th:href="@{/client/{id}
+                                    (id=${product.id})}">
+                                <i class="material-icons">add</i>
+                            </a>
+                        </div>
+                        <div class="card-content">
+                            <div id="title-product">
+                                <span class="card-title" th:text="${product.name}">Card Item</span>
+                            </div>
+                            <span class="card-title" th:text=" '$' + ${product.price}">$150.00</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div th:insert="fragments/footer-client"></div>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        M.AutoInit();
+        var instance = M.Carousel.init({
+            fullWidth: true
+        });
+    </script>
+    <script type="text/javascript">
+        function clearFilter(){
+            window.location = '/client';
+        }
+    </script>
+</body>
+</html>

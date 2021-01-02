@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="fragments/head"></head>
+<body>
+<main>
+    <div class="container">
+        <div class="row">
+            <!--Side Bar Employed-->
+            <div class="col s3" th:insert="fragments/sidebar-employed"></div>
+
+            <div class="col s9">
+                <div style="margin-top: 6%;" class="row">
+
+                    <div class="col s4">
+                        <div class="row">
+                            <div class="col 7m">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <img src="/img/employed/product.jpg">
+                                        <span class="card-title black-text">Products</span>
+                                    </div>
+                                    <div class="card-content">
+                                        <p>Enter here to perform product maintenance</p>
+                                    </div>
+                                    <div class="card-action">
+                                        <a class=" blue-text" th:href="@{/products}">Enter here</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s4">
+                        <div class="row">
+                            <div class="col 7m">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <img src="/img/employed/employed.jpg">
+                                        <span class="card-title black-text">Suppliers</span>
+                                    </div>
+                                    <div class="card-content">
+                                        <p>Enter here to perform supplier maintenance</p>
+                                    </div>
+                                    <div class="card-action">
+                                        <a class=" blue-text" th:href="@{/suppliers}">This is a link</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s4">
+                        <div class="row">
+                            <div class="col 7m">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <img src="/img/employed/category.jpg">
+                                        <span class="card-title black-text">Categorys</span>
+                                    </div>
+                                    <div class="card-content">
+                                        <p>Enter here to perform category maintenance</p>
+                                    </div>
+                                    <div class="card-action">
+                                        <a class=" blue-text" th:href="@{/categories}">This is a link</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s4">
+                        <div class="row">
+                            <div class="col 7m">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <img src="/img/employed/depot.jpg">
+                                        <span class="card-title black-text">Depots</span>
+                                    </div>
+                                    <div class="card-content">
+                                        <p>Enter here to perform depot maintenance</p>
+                                    </div>
+                                    <div class="card-action">
+                                        <a class=" blue-text" th:href="@{/depots}">This is a link</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s4">
+                        <div class="row">
+                            <div class="col 7m">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <img src="/img/employed/user.jpg">
+                                        <span class="card-title black-text">Users</span>
+                                    </div>
+                                    <div class="card-content">
+                                        <p>Enter here to perform user maintenance</p>
+                                    </div>
+                                    <div class="card-action">
+                                        <a class=" blue-text" th:href="@{/users}">This is a link</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s4">
+                        <div class="row">
+                            <div class="col 7m">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <img src="/img/employed/order.jpg">
+                                        <span class="card-title black-text">Orders</span>
+                                    </div>
+                                    <div class="card-content">
+                                        <p>Enter here to perform Order maintenance</p>
+                                    </div>
+                                    <div class="card-action">
+                                        <a class=" blue-text" th:href="@{/orders}">This is a link</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="fragments/head-client">
+</head>
+<body>
+
+    <div th:insert="fragments/nav-client"></div>
+
+    <div class="container" id="title-cart">
+        <h2>Cart</h2>
+    </div>
+        <div class="container">
+            <div class="row">
+                <div class="col s8">
+                    <table class="centered highlight responsive-table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Photo</th>
+                            <th scope="col">Product</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">SubTotal</th>
+                            <th scope="col">Options</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="orderDetails : ${orderDetailsList}">
+                            <td><img th:src="${orderDetails.product.url}"></td>
+                            <td th:text="${orderDetails.product.name}"></td>
+                            <td th:text="${orderDetails.quantity}"></td>
+                            <td th:text=" '$' + ${orderDetails.subtotal}"></td>
+                            <td>
+                                <div>
+<!--                                    <a th:href="@{/orderDetails/delete/{id}-->
+<!--                                        (id=${orderDetails.getId()})}"-->
+<!--                                       class="waves-effect waves-light btn-small red lighten-1">-->
+<!--                                        <i class="large material-icons">delete</i>-->
+<!--                                    </a>-->
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col s4">
+                    <div class="card" id="cart-info">
+                        <div class="card-header">
+                            <h3>Order</h3>
+                        </div>
+                        <div class="card-body">
+                            <label>Subtotal:</label>
+                            <input type="text" step="0.01" th:value=" '$' +  ${subTotal}"  readonly="" class="from-control">
+
+                            <label>Discount:</label>
+                            <input type="text" step="0.01" th:value=" '$' +  ${discount}"  readonly=""  class="from-control">
+
+                            <label>Total Pay:</label>
+                            <input type="text" step="0.01" th:value=" '$' +  ${totalPay}" readonly="" class="from-control">
+                        </div>
+                        <div class="card-footer">
+                            <a class="waves-effect waves-light  blue darken-3 btn" th:href="@{/cart/save}">Pay</a>
+                            <a class="waves-effect waves-light red btn" th:href="@{/client}">Back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div th:insert="fragments/footer-client"></div>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

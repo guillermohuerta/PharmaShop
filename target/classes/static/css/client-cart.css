@@ -1,0 +1,44 @@
+/*Cart*/
+
+#title-cart h2{
+    text-align: center;
+    color: #2b57a2;
+    font-weight: 500;
+    margin-top: 0px;
+    padding-bottom: 15px;
+}
+
+#cart-info{
+    text-align: center;
+    padding: 16px 0;
+}
+
+.card-header H3{
+    color: #2b57a2;
+    font-weight: 500;
+}
+.card-body{
+    width: 150px;
+}
+
+.card-body{
+    margin: 0 auto;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.card-body input{
+    text-align: center;
+}
+
+.card-footer{
+    margin-bottom: 40px;
+}
+
+table img{
+    height: 70px;
+}
+
+#register-login{
+    margin-top: 13px ;
+}

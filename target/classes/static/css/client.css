@@ -1,0 +1,122 @@
+#nav-main nav ul a,li{
+    color: #95abd0;
+    font-size: 18px;
+}
+
+#nav-main nav ul a:hover{
+    color: #2b57a2;
+    background-color: #fff;
+}
+
+#nav-main nav{
+    background-color: #fff;
+}
+
+#nav-main{
+    border-style: solid;
+    border-width: 0 0 1px;
+    border-color: #eaeef6;
+    margin-bottom: 12px;
+}
+
+#nav-main nav{
+    box-shadow:  0 0 0 0 rgba(63, 49, 49, 0.2);
+}
+
+.li-login-register{
+    color: #95abd0;
+    font-size: 18px;
+    margin-top: -2px;
+}
+
+#nav-main nav span{
+    color: #2b57a2;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.card-image i{
+    background-color: #2b57a2;
+}
+
+#title-main h2{
+    color:#2b57a2;
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.carousel-slider{
+    height: 680px;
+}
+
+.login-register-a{
+    margin-bottom: 5px;
+}
+
+#card-main{
+    padding-bottom: 20px;
+}
+
+#logo-card{
+    margin-top: 28px;
+}
+
+#buttom-card{
+    margin-top: 30px;
+    padding-left: 0px;
+}
+
+#register-login a,#register-login label{
+    font-size: 24px;
+    font-weight: 500;
+    color: #33a58e;
+    padding:0 5px 0 2px;
+}
+
+#search-card{
+    margin-top: 18px;
+    background-color: #EAEEF6;
+}
+
+.input-field input[type=search]:focus:not(.browser-default){
+    background-color: #EAEEF6 !important;
+}
+
+#register-login i{
+    position: relative;
+    top: 5px;
+}
+
+#register-login a:hover{
+    color: #2b57a2;
+}
+
+#description-card{
+    float: left;
+    margin-top: 10px;
+}
+
+.login-register-a a{
+    color: #2b57a2;
+}
+
+.login-register-a a:hover{
+    color: #95abd0;
+}
+
+.card-title{
+    font-size: 18vw;
+    color: #2b57a2;
+}
+
+#title-product{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.page-footer{
+    background-color: #2B57A2;
+    margin-top: 80px;"
+}
+
