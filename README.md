@@ -1,5 +1,5 @@
 ### Introducción
-FarmaShop es una farmacia online que contiene un carrito de compras donde el cliente puede comprar medicamentos y tambié cuenta con vistas para la gestion de la informacion de la aplicación, para la gestión de los stocks de los productos y para ver el historial de comprar de cada usuario y muchas cosas más
+FarmaShop es una farmacia online que contiene un carrito de compras donde el cliente puede comprar medicamentos y también cuenta con vistas para la gestion de la informacion de la aplicación, para la gestión de los stocks de los productos y para ver el historial de comprar de cada usuario y muchas cosas más
 
 ### Caracteristicas
 - FarmaShop es un aplicativo web creado con Java 8 and Spring Boot por parte del backend.
